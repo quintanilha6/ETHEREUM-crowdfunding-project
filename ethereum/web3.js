@@ -5,7 +5,6 @@ import Web3 from "web3";
 // const web3 = new Web3(window.web3.currentProvider);
 
 let web3;
-
 // Destinguishes browser from server side
 if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   // we are in the browser and metamask injected a provider and is running
@@ -17,5 +16,8 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   );
   web3 = new Web3(provider);
 }
+
+window.ethereum.enable();
+
 
 export default web3;
